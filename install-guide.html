@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install Guide — CryptoClaw Skills Hub</title>
+  <meta name="description" content="Step-by-step guide to installing any CryptoClaw skill in OpenClaw.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-header {
+      padding: 56px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-sub);
+    }
+    .guide-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      padding: 48px 0;
+    }
+    .guide-toc {
+      position: sticky;
+      top: calc(var(--nav-height) + 24px);
+      height: fit-content;
+    }
+    .guide-toc h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .toc-list a {
+      display: block;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      border-left: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .toc-list a:hover {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-glow);
+    }
+    .guide-step {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-sub);
+    }
+    .guide-step:last-child { border-bottom: none; }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .step-badge {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--accent-glow);
+      border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .guide-step p, .guide-step li { color: var(--text-dim); line-height: 1.75; font-size: 0.95rem; }
+    .guide-step ul, .guide-step ol { padding-left: 24px; display: flex; flex-direction: column; gap: 8px; }
+    .inline-code {
+      background: rgba(0,229,204,0.1);
+      border: 1px solid rgba(0,229,204,0.2);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: 'Fira Code', Consolas, monospace;
+      font-size: 0.875em;
+    }
+    @media (max-width: 768px) {
+      .guide-layout { grid-template-columns: 1fr; }
+      .guide-toc { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🐲</span>
+      CryptoClaw <span>Skills</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="sell.html">Sell a Skill</a></li>
+      <li><a href="install-guide.html">Install Guide</a></li>
+      <li><a href="marketplace.html" class="nav-cta">Browse Skills</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="marketplace.html">Marketplace</a>
+  <a href="sell.html">Sell a Skill</a>
+  <a href="install-guide.html">Install Guide</a>
+  <a href="marketplace.html" class="nav-cta" style="margin-top:8px">Browse Skills →</a>
+</div>
+
+<!-- ─── Page Header ─── -->
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">📖 Documentation</span>
+    <h1>How to Install a Skill</h1>
+    <p style="font-size:1.05rem;max-width:560px;margin:12px auto 0">
+      Installing any CryptoClaw skill takes about 2 minutes. No coding required.
+    </p>
+  </div>
+</div>
+
+<!-- ─── Guide ─── -->
+<main>
+  <div class="container">
+    <div class="guide-layout">
+
+      <!-- TOC -->
+      <aside class="guide-toc">
+        <h4>On This Page</h4>
+        <ul class="toc-list">
+          <li><a href="#prereqs">Prerequisites</a></li>
+          <li><a href="#step1">1. Purchase & Download</a></li>
+          <li><a href="#step2">2. Find Your Skills Folder</a></li>
+          <li><a href="#step3">3. Copy the Skill</a></li>
+          <li><a href="#step4">4. Configure</a></li>
+          <li><a href="#step5">5. Restart & Verify</a></li>
+          <li><a href="#troubleshoot">Troubleshooting</a></li>
+        </ul>
+        <div style="margin-top:24px">
+          <a href="marketplace.html" class="btn btn-outline btn-sm btn-full">← Browse Skills</a>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <div>
+
+        <!-- Prerequisites -->
+        <div class="guide-step" id="prereqs">
+          <div class="step-header">
+            <div class="step-badge">⚙️</div>
+            <h2>Prerequisites</h2>
+          </div>
+          <p>Before installing any skill, make sure you have:</p>
+          <ul style="margin-top:12px">
+            <li><strong>OpenClaw installed</strong> — Download from <a href="https://openclaw.dev" target="_blank">openclaw.dev</a> if you haven't already</li>
+            <li><strong>OpenClaw running at least once</strong> — This creates the skills directory automatically</li>
+            <li><strong>A Gumroad account</strong> (for paid skills) — Free to create, handles your purchase history</li>
+          </ul>
+          <div class="alert" style="margin-top:16px">
+            <strong>New to OpenClaw?</strong> OpenClaw is a personal AI agent platform. Skills are extensions that give your agent new abilities. You run it on your own computer — everything stays local.
+          </div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="guide-step" id="step1">
+          <div class="step-header">
+            <div class="step-badge">1</div>
+            <h2>Purchase & Download</h2>
+          </div>
+          <ol>
+            <li>Find the skill you want on the <a href="marketplace.html">Marketplace</a></li>
+            <li>Click <strong>"Buy Now"</strong> or <strong>"Get Free"</strong> — this takes you to Gumroad</li>
+            <li>Complete checkout (free skills just need an email)</li>
+            <li>Gumroad will email you a download link, or you can download immediately from the confirmation page</li>
+            <li>Download the <strong>.zip</strong> file to your Downloads folder</li>
+          </ol>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="guide-step" id="step2">
+          <div class="step-header">
+            <div class="step-badge">2</div>
+            <h2>Find Your OpenClaw Skills Folder</h2>
+          </div>
+          <p>The skills folder location depends on your operating system:</p>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+            <div class="card" style="padding:16px">
+              <h4 style="margin-bottom:8px">🪟 Windows</h4>
+              <div class="code-block"><code>C:\Users\YourName\.openclaw\workspace\skills\</code></div>
+              <p style="font-size:0.82rem;margin-top:8px">Or press <kbd style="background:var(--card-hover);padding:2px 6px;border-radius:4px;font-family:monospace">Win+R</kbd> and type <span class="inline-code">%USERPROFILE%\.openclaw\workspace\skills</span></p>
+            </div>
+            <div class="card" style="padding:16px">
+              <h4 style="margin-bottom:8px">🍎 macOS / Linux</h4>
+              <div class="code-block"><code>~/.openclaw/workspace/skills/</code></div>
+              <p style="font-size:0.82rem;margin-top:8px">In Finder: <strong>Go → Go to Folder</strong> and paste the path above.</p>
+            </div>
+          </div>
+          <div class="alert" style="margin-top:16px">
+            <strong>Tip:</strong> If the <span class="inline-code">skills/</span> folder doesn't exist, run OpenClaw once and it will be created automatically.
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="guide-step" id="step3">
+          <div class="step-header">
+            <div class="step-badge">3</div>
+            <h2>Copy the Skill Folder</h2>
+          </div>
+          <ol>
+            <li>Locate the downloaded ZIP file (usually in your Downloads folder)</li>
+            <li>Extract / unzip it — you'll get a folder like <span class="inline-code">crypto-scanner-v1/</span></li>
+            <li>Copy the entire extracted folder into your OpenClaw skills directory</li>
+          </ol>
+          <div style="margin-top:20px">
+            <p style="margin-bottom:8px"><strong>Your skills folder should look like this:</strong></p>
+            <div class="code-block"><code>skills/
+├── crypto-scanner-v1/      ← your new skill
+│   ├── SKILL.md
+│   ├── skill.py
+│   └── config.json
+├── (other skills you have)
+└── ...</code></div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="guide-step" id="step4">
+          <div class="step-header">
+            <div class="step-badge">4</div>
+            <h2>Configure the Skill</h2>
+          </div>
+          <p>Most skills require some configuration before use. Open the skill folder and look for:</p>
+          <ul style="margin:12px 0">
+            <li><span class="inline-code">SKILL.md</span> — read this first! It explains what the skill does and what you need to configure</li>
+            <li><span class="inline-code">config.json</span> — edit this with your API keys, Telegram token, etc.</li>
+            <li><span class="inline-code">.env.example</span> — copy to <span class="inline-code">.env</span> and fill in your credentials</li>
+          </ul>
+          <div class="alert alert-gold">
+            <strong>🔑 Common configurations:</strong> Most crypto skills need a <strong>Telegram Bot token</strong> (for alerts) and a <strong>CoinGecko API key</strong> (free tier — just sign up at coingecko.com). The SKILL.md inside each skill has step-by-step setup instructions.
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="guide-step" id="step5">
+          <div class="step-header">
+            <div class="step-badge">5</div>
+            <h2>Restart OpenClaw & Verify</h2>
+          </div>
+          <ol>
+            <li>Close OpenClaw completely (or end the process)</li>
+            <li>Restart OpenClaw</li>
+            <li>Ask your agent: <span class="inline-code">What skills do you have?</span></li>
+            <li>Your new skill should appear in the list</li>
+            <li>Try asking the skill's trigger phrase — it's listed in the SKILL.md inside the skill folder</li>
+          </ol>
+          <div class="alert" style="margin-top:16px">
+            <strong>🎉 You're done!</strong> Your OpenClaw agent now has new crypto analysis powers. Remember: all skills here are paper-trade only — they provide signals and analysis, but never execute real trades.
+          </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="guide-step" id="troubleshoot">
+          <div class="step-header">
+            <div class="step-badge">🔧</div>
+            <h2>Troubleshooting</h2>
+          </div>
+          <div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                The skill doesn't appear after restarting <span class="accordion-icon">▾</span>
+              </button>
+              <div class="accordion-body">
+                Make sure the skill folder is directly inside <span class="inline-code">skills/</span> — not nested inside another folder. The path should be <span class="inline-code">skills/your-skill-name/SKILL.md</span>, not <span class="inline-code">skills/zip-contents/your-skill-name/SKILL.md</span>.
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                The skill crashes or throws an error <span class="accordion-icon">▾</span>
+              </button>
+              <div class="accordion-body">
+                Check your configuration files. Missing API keys or Telegram tokens are the most common cause. Open <span class="inline-code">SKILL.md</span> inside the skill folder and follow the setup steps carefully.
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                I'm not receiving Telegram alerts <span class="accordion-icon">▾</span>
+              </button>
+              <div class="accordion-body">
+                1. Make sure you've started a conversation with your bot on Telegram first (send it <span class="inline-code">/start</span>). 2. Double-check your bot token in the config. 3. Make sure you're using the correct chat ID (your personal chat ID, not a group).
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                I need a refund <span class="accordion-icon">▾</span>
+              </button>
+              <div class="accordion-body">
+                Refund requests go through Gumroad directly. Log into your Gumroad account, find the purchase, and request a refund. Alternatively email <a href="mailto:paarthurnax970@gmail.com">paarthurnax970@gmail.com</a> and we'll sort it out.
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:32px;text-align:center">
+            <p style="margin-bottom:16px">Still stuck? Email us and we'll help you get set up.</p>
+            <a href="mailto:paarthurnax970@gmail.com" class="btn btn-outline">📧 Contact Support</a>
+            <a href="marketplace.html" class="btn btn-primary" style="margin-left:12px">Browse More Skills →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.05rem">
+          <span class="logo-icon">🐲</span>
+          CryptoClaw <span>Skills</span> Hub
+        </a>
+        <p>The safe crypto skills marketplace for OpenClaw users.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Marketplace</h4>
+        <ul class="footer-links">
+          <li><a href="marketplace.html">Browse Skills</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Creators</h4>
+        <ul class="footer-links">
+          <li><a href="sell.html">Become a Seller</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="install-guide.html">Install Guide</a></li>
+          <li><a href="mailto:paarthurnax970@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CryptoClaw Skills Hub.</span>
+      <span>All skills are paper-trade safe. Not financial advice.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
