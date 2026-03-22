@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Detail — CryptoClaw Skills Hub</title>
+  <meta name="description" content="Detailed skill information, installation instructions, and reviews.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-header {
+      padding: 32px 0 20px;
+      border-bottom: 1px solid var(--border-sub);
+    }
+    #skill-detail-content { padding: 40px 0; }
+    @media (max-width: 768px) {
+      .grid.grid-2 { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🐲</span>
+      CryptoClaw <span>Skills</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="sell.html">Sell a Skill</a></li>
+      <li><a href="install-guide.html">Install Guide</a></li>
+      <li><a href="marketplace.html" class="nav-cta">Browse Skills</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="marketplace.html">Marketplace</a>
+  <a href="sell.html">Sell a Skill</a>
+  <a href="install-guide.html">Install Guide</a>
+  <a href="marketplace.html" class="nav-cta" style="margin-top:8px">Browse Skills →</a>
+</div>
+
+<!-- ─── Page Header / Breadcrumb ─── -->
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="marketplace.html">Marketplace</a>
+      <span class="breadcrumb-sep">›</span>
+      <span id="breadcrumb-skill">Loading…</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Skill Detail ─── -->
+<main>
+  <div class="container">
+    <div id="skill-detail-content">
+      <div class="loading"><div class="spinner"></div>Loading skill…</div>
+    </div>
+  </div>
+</main>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.05rem">
+          <span class="logo-icon">🐲</span>
+          CryptoClaw <span>Skills</span> Hub
+        </a>
+        <p>The safe crypto skills marketplace for OpenClaw users. Every skill sandbox-reviewed before listing.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Marketplace</h4>
+        <ul class="footer-links">
+          <li><a href="marketplace.html">Browse Skills</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Creators</h4>
+        <ul class="footer-links">
+          <li><a href="sell.html">Become a Seller</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="install-guide.html">Install Guide</a></li>
+          <li><a href="mailto:paarthurnax970@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CryptoClaw Skills Hub.</span>
+      <span>All skills are paper-trade safe. Not financial advice.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
