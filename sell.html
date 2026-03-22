@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Seller — CryptoClaw Skills Hub</title>
+  <meta name="description" content="Sell your OpenClaw crypto skills. Keep 90% of every sale. Submit your skill for review today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-header {
+      padding: 56px 0 40px;
+      background: linear-gradient(180deg, rgba(0,229,204,0.04) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border-sub);
+      text-align: center;
+    }
+    .page-header h1 { margin-bottom: 12px; }
+
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .perk-card {
+      background: var(--card);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+    }
+    .perk-card .perk-icon { font-size: 2rem; margin-bottom: 12px; }
+    .perk-card h3 { font-size: 1rem; margin-bottom: 8px; }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .process-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .process-step-num {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--accent-glow);
+      border: 1.5px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .process-step-body h4 { margin-bottom: 4px; }
+    .process-step-body p { font-size: 0.875rem; }
+
+    .form-card {
+      background: var(--card);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+    @media (max-width: 768px) {
+      .perks-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 24px; }
+      .sell-layout { flex-direction: column !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🐲</span>
+      CryptoClaw <span>Skills</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="sell.html">Sell a Skill</a></li>
+      <li><a href="install-guide.html">Install Guide</a></li>
+      <li><a href="marketplace.html" class="nav-cta">Browse Skills</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="marketplace.html">Marketplace</a>
+  <a href="sell.html">Sell a Skill</a>
+  <a href="install-guide.html">Install Guide</a>
+  <a href="marketplace.html" class="nav-cta" style="margin-top:8px">Browse Skills →</a>
+</div>
+
+<!-- ─── Page Header ─── -->
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">For Creators</span>
+    <h1>Turn Your Skills Into <span style="color:var(--gold)">Passive Income</span></h1>
+    <p style="font-size:1.1rem;max-width:560px;margin:0 auto">
+      Build an OpenClaw crypto skill, submit it here, earn 90% of every sale. We handle everything else.
+    </p>
+  </div>
+</div>
+
+<!-- ─── Main ─── -->
+<main class="section">
+  <div class="container">
+
+    <!-- Perks -->
+    <div class="perks-grid" id="revenue">
+      <div class="perk-card">
+        <div class="perk-icon">💰</div>
+        <h3>Keep 90%</h3>
+        <p>You earn 90% of every sale automatically via Gumroad's revenue split. We take 10% to run the marketplace.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🌍</div>
+        <h3>Global Audience</h3>
+        <p>OpenClaw users worldwide browse this marketplace. Your skill gets exposure to the entire community.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🎁</div>
+        <h3>Free Listing</h3>
+        <p>No upfront cost, no monthly fees. List your skill for free. You only pay when you earn.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:48px;flex-wrap:wrap" class="sell-layout">
+
+      <!-- Left: Requirements + Process -->
+      <div style="flex:1;min-width:280px">
+
+        <div class="card" style="margin-bottom:24px" id="requirements">
+          <h3 style="margin-bottom:16px">📋 Requirements</h3>
+          <ul style="display:flex;flex-direction:column;gap:10px;color:var(--text-dim);padding-left:20px;font-size:0.9rem">
+            <li>Skill must be crypto/trading focused</li>
+            <li>Must be built for OpenClaw (follows SKILL.md spec)</li>
+            <li>Paper trading only — no real order execution</li>
+            <li>Must pass our sandbox safety review</li>
+            <li>You must own a Gumroad account to receive payments</li>
+            <li>GitHub repo or ZIP download required</li>
+            <li>Must include a README with install instructions</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-bottom:24px">
+          <h3 style="margin-bottom:20px">🔄 Process</h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="process-step-num">1</div>
+              <div class="process-step-body">
+                <h4>Submit the form</h4>
+                <p>Fill in your skill details, GitHub link, and Gumroad product URL (create your Gumroad product first).</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-num">2</div>
+              <div class="process-step-body">
+                <h4>We review & sandbox test</h4>
+                <p>Within 3–5 business days we run your skill in isolation, verify it's paper-trade only, and check the code.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-num">3</div>
+              <div class="process-step-body">
+                <h4>We add it to the marketplace</h4>
+                <p>Once approved, we add your skill to skills.json and it goes live on the marketplace.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-num">4</div>
+              <div class="process-step-body">
+                <h4>You earn 90%</h4>
+                <p>Gumroad handles all payments. Your cut lands in your Gumroad account automatically.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-gold">
+          <strong style="color:var(--gold)">⚠️ Revenue split setup:</strong> Before submitting, create your Gumroad product and configure the revenue affiliate so we receive 10%. We'll walk you through this after approval.
+        </div>
+
+      </div>
+
+      <!-- Right: Submission Form -->
+      <div style="flex:1.3;min-width:300px">
+        <div class="form-card">
+          <h2 style="margin-bottom:8px">Submit Your Skill</h2>
+          <p style="margin-bottom:28px;font-size:0.9rem">Review timeline: 3–5 business days. We'll email you the outcome.</p>
+
+          <form id="seller-form" action="https://formspree.io/f/xkgbnqve" method="POST">
+
+            <div class="grid grid-2" style="gap:16px">
+              <div class="form-group" style="margin-bottom:0">
+                <label class="form-label" for="name">Your Name <span>*</span></label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Jane Smith" required>
+              </div>
+              <div class="form-group" style="margin-bottom:0">
+                <label class="form-label" for="email">Email Address <span>*</span></label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+              </div>
+            </div>
+
+            <div class="divider" style="margin:16px 0"></div>
+
+            <div class="form-group">
+              <label class="form-label" for="skill-name">Skill Name <span>*</span></label>
+              <input type="text" id="skill-name" name="skill_name" class="form-input" placeholder="e.g. CryptoScanner" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tagline">One-Line Description <span>*</span></label>
+              <input type="text" id="tagline" name="tagline" class="form-input" placeholder="e.g. Scan top 50 coins for momentum signals" required maxlength="80">
+              <span class="form-hint">Max 80 characters. This appears on your skill card.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="category">Category <span>*</span></label>
+              <select id="category" name="category" class="form-select" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="Scanner">Scanner</option>
+                <option value="Analyzer">Analyzer</option>
+                <option value="Risk Manager">Risk Manager</option>
+                <option value="Portfolio">Portfolio</option>
+                <option value="News">News</option>
+                <option value="DeFi">DeFi</option>
+                <option value="Automation">Automation</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="description">Full Description <span>*</span></label>
+              <textarea id="description" name="description" class="form-textarea" placeholder="Describe what your skill does, how it works, what APIs it uses, and why traders will love it…" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="github">GitHub Repository URL <span>*</span></label>
+              <input type="url" id="github" name="github_url" class="form-input" placeholder="https://github.com/yourname/your-skill" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="price">Price (USD) <span>*</span></label>
+              <select id="price" name="price" class="form-select" required>
+                <option value="" disabled selected>Select price</option>
+                <option value="0">Free</option>
+                <option value="5">$5</option>
+                <option value="9">$9</option>
+                <option value="14">$14</option>
+                <option value="19">$19</option>
+                <option value="24">$24</option>
+                <option value="29">$29</option>
+                <option value="49">$49</option>
+              </select>
+              <span class="form-hint">You keep 90% of this price. Recommended: $9–$19 for best conversion.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="gumroad">Gumroad Product URL <span>*</span></label>
+              <input type="url" id="gumroad" name="gumroad_url" class="form-input" placeholder="https://yourname.gumroad.com/l/your-skill" required>
+              <span class="form-hint">Create your Gumroad product first, then paste the link here.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="safety-notes">Safety Notes</label>
+              <textarea id="safety-notes" name="safety_notes" class="form-textarea" style="min-height:80px" placeholder="Describe what external APIs your skill calls, what data it accesses, and confirm it cannot place real trades…"></textarea>
+            </div>
+
+            <!-- Hidden fields for formspree -->
+            <input type="hidden" name="_subject" value="CryptoClaw Skill Submission">
+            <input type="hidden" name="_next" value="">
+
+            <div id="form-status" style="font-size:0.85rem;margin-bottom:12px;min-height:20px"></div>
+
+            <button type="submit" class="btn btn-primary btn-full btn-lg">
+              🚀 Submit Skill for Review
+            </button>
+            <p style="font-size:0.78rem;text-align:center;margin-top:12px">
+              By submitting you agree that your skill is paper-trade safe and doesn't collect user data without consent.
+            </p>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.05rem">
+          <span class="logo-icon">🐲</span>
+          CryptoClaw <span>Skills</span> Hub
+        </a>
+        <p>The safe crypto skills marketplace for OpenClaw users.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Marketplace</h4>
+        <ul class="footer-links">
+          <li><a href="marketplace.html">Browse Skills</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Creators</h4>
+        <ul class="footer-links">
+          <li><a href="sell.html">Become a Seller</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="install-guide.html">Install Guide</a></li>
+          <li><a href="mailto:paarthurnax970@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CryptoClaw Skills Hub.</span>
+      <span>All skills are paper-trade safe. Not financial advice.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
