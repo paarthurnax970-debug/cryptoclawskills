@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Skills — CryptoClaw Skills Hub</title>
+  <meta name="description" content="Browse vetted crypto trading skills for OpenClaw. Filter by category, price, and ratings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-header {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid var(--border-sub);
+    }
+    .page-header h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+<!-- ─── Navigation ─── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🐲</span>
+      CryptoClaw <span>Skills</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="sell.html">Sell a Skill</a></li>
+      <li><a href="install-guide.html">Install Guide</a></li>
+      <li><a href="marketplace.html" class="nav-cta">Browse Skills</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="marketplace.html">Marketplace</a>
+  <a href="sell.html">Sell a Skill</a>
+  <a href="install-guide.html">Install Guide</a>
+  <a href="marketplace.html" class="nav-cta" style="margin-top:8px">Browse Skills →</a>
+</div>
+
+<!-- ─── Page Header ─── -->
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Marketplace</span>
+    </div>
+    <h1>Browse Crypto Skills</h1>
+    <p>All skills sandbox-reviewed. All paper-trade safe. Install in minutes.</p>
+  </div>
+</div>
+
+<!-- ─── Main Content ─── -->
+<main class="section-sm">
+  <div class="container">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-search">
+        <span class="filter-search-icon">🔍</span>
+        <input type="search" id="search" class="form-input" placeholder="Search skills by name, tag, or description…">
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Category:</span>
+        <div class="filter-chips">
+          <button class="chip active" data-filter-cat="all">All</button>
+          <button class="chip" data-filter-cat="Scanner">🔍 Scanner</button>
+          <button class="chip" data-filter-cat="Analyzer">📊 Analyzer</button>
+          <button class="chip" data-filter-cat="Risk Manager">🛡️ Risk Manager</button>
+          <button class="chip" data-filter-cat="Portfolio">📈 Portfolio</button>
+          <button class="chip" data-filter-cat="News">📰 News</button>
+          <button class="chip" data-filter-cat="DeFi">⚡ DeFi</button>
+          <button class="chip" data-filter-cat="Automation">🤖 Automation</button>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Price:</span>
+        <div class="filter-chips">
+          <button class="chip active" data-filter-price="all">All Prices</button>
+          <button class="chip" data-filter-price="free">Free</button>
+          <button class="chip" data-filter-price="u10">Under $10</button>
+          <button class="chip" data-filter-price="u25">$10 – $25</button>
+          <button class="chip" data-filter-price="u25p">$25+</button>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+        <span style="font-size:0.85rem;color:var(--text-muted)" id="result-count">Loading…</span>
+        <a href="sell.html" style="font-size:0.85rem;color:var(--accent)">+ Submit your skill</a>
+      </div>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid skills-grid" id="skills-grid">
+      <div class="loading"><div class="spinner"></div>Loading skills…</div>
+    </div>
+
+    <!-- No Results -->
+    <div id="no-results" style="display:none">
+      <div class="empty-state">
+        <div class="empty-icon">🔍</div>
+        <h3>No skills match your filters</h3>
+        <p>Try adjusting your search or category filter.</p>
+        <a href="sell.html" class="btn btn-outline" style="margin-top:20px">Be the first to submit one →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ─── Sell Banner ─── -->
+<section class="section-sm" style="background:var(--card);border-top:1px solid var(--border-sub)">
+  <div class="container" style="text-align:center">
+    <h3 style="margin-bottom:8px">Don't see what you need?</h3>
+    <p style="margin-bottom:20px">Submit your own skill and earn 90% of every sale.</p>
+    <a href="sell.html" class="btn btn-gold">Become a Seller →</a>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.05rem">
+          <span class="logo-icon">🐲</span>
+          CryptoClaw <span>Skills</span> Hub
+        </a>
+        <p>The safe crypto skills marketplace for OpenClaw users. Every skill sandbox-reviewed before listing.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Marketplace</h4>
+        <ul class="footer-links">
+          <li><a href="marketplace.html">Browse Skills</a></li>
+          <li><a href="marketplace.html">Scanners</a></li>
+          <li><a href="marketplace.html">Analyzers</a></li>
+          <li><a href="marketplace.html">Risk Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Creators</h4>
+        <ul class="footer-links">
+          <li><a href="sell.html">Become a Seller</a></li>
+          <li><a href="sell.html#requirements">Requirements</a></li>
+          <li><a href="sell.html#revenue">Revenue Split</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="install-guide.html">Install Guide</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="mailto:paarthurnax970@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CryptoClaw Skills Hub. Built for OpenClaw users.</span>
+      <span>All skills are paper-trade safe. Not financial advice.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
