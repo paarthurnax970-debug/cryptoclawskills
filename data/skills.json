@@ -16,8 +16,16 @@
       "reviews": 12,
       "description": "Scans the top 50 cryptocurrencies by market cap for price momentum signals. Outputs daily summary to Telegram. Paper trade triggers only — no auto-execution.",
       "long_description": "CryptoScanner pulls live data from CoinGecko every 6 hours and ranks the top 50 coins by momentum score — a composite of 24h price change, volume surge, and RSI proximity to breakout zones. Results are formatted as a clean Telegram message with emoji indicators. Completely paper-trade safe: it never connects to any exchange API. All outputs are read-only signals for your review. Perfect entry point for anyone new to AI-assisted crypto analysis.",
-      "tags": ["scanner", "momentum", "telegram", "coingecko"],
-      "requirements": ["Telegram Bot token", "CoinGecko API (free tier)"],
+      "tags": [
+        "scanner",
+        "momentum",
+        "telegram",
+        "coingecko"
+      ],
+      "requirements": [
+        "Telegram Bot token",
+        "CoinGecko API (free tier)"
+      ],
       "version": "1.0.0",
       "added": "2026-03-22",
       "safety_notes": "Read-only CoinGecko API calls only. No exchange connectivity. No auto-trading. Reviewed and verified by Paarthurnax team on 2026-03-22."
@@ -38,8 +46,16 @@
       "reviews": 8,
       "description": "Calculates RSI and MACD for any coin. Outputs buy/sell signals to Telegram. No auto-execution — you decide what to do with the signals.",
       "long_description": "TechAnalyzer computes RSI (14-period) and MACD (12/26/9) for any coin pair you configure. When RSI crosses key thresholds (oversold <30, overbought >70) or MACD produces a bullish/bearish crossover, it fires a Telegram alert with full context: current price, signal strength, and a confidence score. You can monitor up to 10 coins simultaneously. All data sourced from CoinGecko — no exchange account needed.",
-      "tags": ["RSI", "MACD", "signals", "technical-analysis"],
-      "requirements": ["Telegram Bot token", "CoinGecko API (free tier)"],
+      "tags": [
+        "RSI",
+        "MACD",
+        "signals",
+        "technical-analysis"
+      ],
+      "requirements": [
+        "Telegram Bot token",
+        "CoinGecko API (free tier)"
+      ],
       "version": "1.0.0",
       "added": "2026-03-22",
       "safety_notes": "Read-only market data. No exchange API keys required. No order placement capability. Signals are informational only. Reviewed 2026-03-22."
@@ -60,8 +76,15 @@
       "reviews": 6,
       "description": "Sets maximum position size as % of portfolio. Blocks paper trades that exceed your risk threshold. The single most important skill for beginners.",
       "long_description": "RiskGuard is your circuit breaker. Configure a max position size (e.g., 5% of portfolio per trade) and it will block any paper trade that exceeds it — even if another skill suggests it. It also enforces daily loss limits: if your paper portfolio drops more than X% in a day, it puts all other trading skills into 'observe only' mode until you manually reset. Think of it as your responsible adult supervisor. Essential for anyone learning systematic trading.",
-      "tags": ["risk", "position-sizing", "safety", "portfolio"],
-      "requirements": ["Compatible with all other CryptoClaw skills"],
+      "tags": [
+        "risk",
+        "position-sizing",
+        "safety",
+        "portfolio"
+      ],
+      "requirements": [
+        "Compatible with all other CryptoClaw skills"
+      ],
       "version": "1.0.0",
       "added": "2026-03-22",
       "safety_notes": "Paper trading only — no real funds involved. Acts as a guardrail layer, not a trading engine. Reviewed 2026-03-22."
@@ -82,8 +105,16 @@
       "reviews": 5,
       "description": "Tracks all open paper positions. Generates daily P&L report via email. Compares your performance against BTC benchmark so you know if you're actually beating the market.",
       "long_description": "PortfolioTracker logs every paper trade your OpenClaw agent suggests, tracks open positions in a local JSON file, and sends you a daily email report at 9 AM your time. The report shows: total portfolio value, daily P&L in $ and %, best/worst performers, and a comparison against simply holding BTC. After 30 days you'll have enough data to know if your strategy actually adds alpha. No exchange connectivity — all simulated using CoinGecko prices.",
-      "tags": ["portfolio", "PnL", "tracking", "email"],
-      "requirements": ["Email address for reports", "CoinGecko API (free tier)"],
+      "tags": [
+        "portfolio",
+        "PnL",
+        "tracking",
+        "email"
+      ],
+      "requirements": [
+        "Email address for reports",
+        "CoinGecko API (free tier)"
+      ],
       "version": "1.0.0",
       "added": "2026-03-22",
       "safety_notes": "Simulation only. Stores data in local JSON files. No real funds tracked. CoinGecko read-only. Reviewed 2026-03-22."
@@ -104,11 +135,171 @@
       "reviews": 4,
       "description": "Monitors crypto news headlines and scores sentiment using local Ollama model. Sends Telegram alert only for high-impact news — no noise, just signal.",
       "long_description": "NewsSentiment scrapes CryptoPanic and CoinDesk RSS every 30 minutes, runs each headline through a local Ollama llama3 model for sentiment scoring (bullish/bearish/neutral + confidence %), and only fires a Telegram alert when: (a) confidence > 75% and (b) the coin has >$1B market cap. This filters out 90% of the noise. High-impact alerts include: the headline, sentiment score, affected coins, and a suggested 'watch' action (never a trade command). Runs entirely locally — your Ollama instance, your data.",
-      "tags": ["news", "sentiment", "ollama", "telegram"],
-      "requirements": ["Ollama installed locally", "llama3 model pulled", "Telegram Bot token"],
+      "tags": [
+        "news",
+        "sentiment",
+        "ollama",
+        "telegram"
+      ],
+      "requirements": [
+        "Ollama installed locally",
+        "llama3 model pulled",
+        "Telegram Bot token"
+      ],
       "version": "1.0.0",
       "added": "2026-03-22",
       "safety_notes": "All AI processing runs locally via Ollama. No data sent to external AI APIs. News data from public RSS feeds only. Reviewed 2026-03-22."
+    },
+    {
+      "id": "dca-companion-v1",
+      "name": "DCA Companion",
+      "tagline": "Dollar-cost averaging tracker with schedule alerts",
+      "category": "Portfolio",
+      "price": 12,
+      "price_display": "$12",
+      "gumroad_url": "https://dragonwhisper36.gumroad.com/l/homeaiagent",
+      "seller": "Paarthurnax",
+      "seller_verified": true,
+      "verified_safe": true,
+      "installs": 0,
+      "rating": 0.0,
+      "reviews": 0,
+      "description": "Tracks your DCA schedule and logs paper trades automatically. Shows average cost basis and total paper P&L across all buy events.",
+      "long_description": "DCA Companion automates your dollar-cost averaging strategy in paper trading mode. Configure your coin, amount, and frequency (daily/weekly/monthly) and it logs simulated buy events at real CoinGecko prices. Tracks your running average cost, total paper invested, and current P&L. Sends a Telegram digest after each buy event. After 90 days you'll know exactly what your DCA returns would have been — before committing real capital.",
+      "tags": [
+        "DCA",
+        "portfolio",
+        "scheduling",
+        "telegram"
+      ],
+      "requirements": [
+        "CoinGecko API (free tier)",
+        "Telegram Bot token"
+      ],
+      "version": "1.0.0",
+      "added": "2026-03-22",
+      "safety_notes": "Paper trading only. No exchange API required. CoinGecko read-only. Reviewed 2026-03-22."
+    },
+    {
+      "id": "whale-alert-listener-v1",
+      "name": "Whale Alert Listener",
+      "tagline": "Monitors large wallet movements in real time",
+      "category": "Scanner",
+      "price": 19,
+      "price_display": "$19",
+      "gumroad_url": "https://dragonwhisper36.gumroad.com/l/homeaiagent",
+      "seller": "Paarthurnax",
+      "seller_verified": true,
+      "verified_safe": true,
+      "installs": 0,
+      "rating": 0.0,
+      "reviews": 0,
+      "description": "Monitors Ethereum and BSC wallets for large token transfers (>$100K). Fires Telegram alert within 5 minutes using public blockchain APIs.",
+      "long_description": "Whale Alert Listener watches configurable wallet addresses and network-wide transactions for large token movements. Uses Etherscan and BSCScan free APIs to detect transfers above your threshold (default: $100K equivalent). When a whale moves funds, you get a Telegram alert with: wallet addresses, token, amount in USD, transaction link, and a 'smart money direction' indicator (exchange deposit = possibly selling, withdrawal = possibly accumulating). No exchange account needed — all public blockchain data.",
+      "tags": [
+        "whale",
+        "on-chain",
+        "alerts",
+        "telegram"
+      ],
+      "requirements": [
+        "Etherscan free API key",
+        "Telegram Bot token"
+      ],
+      "version": "1.0.0",
+      "added": "2026-03-22",
+      "safety_notes": "Read-only blockchain data via public APIs. Monitors public wallet addresses only. No trading capability. Reviewed 2026-03-22."
+    },
+    {
+      "id": "gas-fee-monitor-v1",
+      "name": "Gas Fee Monitor",
+      "tagline": "Alerts when ETH gas drops below your threshold",
+      "category": "Monitor",
+      "price": 0,
+      "price_display": "Free",
+      "gumroad_url": "https://dragonwhisper36.gumroad.com/l/homeaiagent",
+      "seller": "Paarthurnax",
+      "seller_verified": true,
+      "verified_safe": true,
+      "installs": 0,
+      "rating": 0.0,
+      "reviews": 0,
+      "description": "Monitors ETH gas prices via Etherscan free API. Sends Telegram alert when gas falls below your configured threshold. Perfect for timing DeFi transactions.",
+      "long_description": "Gas Fee Monitor polls the Etherscan gas oracle every 2 minutes and alerts you via Telegram when the current fast gas price drops below your configured threshold (default: 20 Gwei). Includes: current slow/standard/fast gas prices, estimated transaction cost for common operations (ERC20 transfer, Uniswap swap, NFT mint), and a 4-hour gas trend chart summary. Free to use — this skill exists to demonstrate the OpenClaw marketplace and build seller credibility.",
+      "tags": [
+        "gas",
+        "ethereum",
+        "alerts",
+        "defi"
+      ],
+      "requirements": [
+        "Etherscan free API key",
+        "Telegram Bot token"
+      ],
+      "version": "1.0.0",
+      "added": "2026-03-22",
+      "safety_notes": "Read-only Etherscan API calls. No wallet interaction. No transaction signing capability. Reviewed 2026-03-22."
+    },
+    {
+      "id": "liquidation-scanner-v1",
+      "name": "Liquidation Scanner",
+      "tagline": "Scans leveraged positions at risk of liquidation",
+      "category": "Risk Manager",
+      "price": 24,
+      "price_display": "$24",
+      "gumroad_url": "https://dragonwhisper36.gumroad.com/l/homeaiagent",
+      "seller": "Paarthurnax",
+      "seller_verified": true,
+      "verified_safe": true,
+      "installs": 0,
+      "rating": 0.0,
+      "reviews": 0,
+      "description": "Monitors Aave and Compound positions for liquidation risk. Alerts when health factor drops below 1.5. Uses DefiLlama + Etherscan free APIs.",
+      "long_description": "Liquidation Scanner queries Aave V3 and Compound III position data for your configured wallet addresses and fires an escalating alert sequence when liquidation risk increases. Green zone (HF > 2.0): daily digest only. Yellow zone (HF 1.5-2.0): alert every 4 hours. Red zone (HF < 1.5): alert every 30 minutes with suggested actions. Uses DefiLlama API for protocol state and Etherscan for on-chain verification. All read-only — it watches and warns, you decide what to do. Potentially the most important skill you'll install if you use leverage.",
+      "tags": [
+        "liquidation",
+        "defi",
+        "risk",
+        "aave"
+      ],
+      "requirements": [
+        "Etherscan free API key",
+        "Telegram Bot token",
+        "Your wallet address(es)"
+      ],
+      "version": "1.0.0",
+      "added": "2026-03-22",
+      "safety_notes": "Read-only monitoring only. Cannot modify positions or execute transactions. All data from public APIs and on-chain reads. Reviewed 2026-03-22."
+    },
+    {
+      "id": "yield-optimizer-v1",
+      "name": "Yield Optimizer",
+      "tagline": "Tracks DeFi yield rates across protocols",
+      "category": "Analyzer",
+      "price": 29,
+      "price_display": "$29",
+      "gumroad_url": "https://dragonwhisper36.gumroad.com/l/homeaiagent",
+      "seller": "Paarthurnax",
+      "seller_verified": true,
+      "verified_safe": true,
+      "installs": 0,
+      "rating": 0.0,
+      "reviews": 0,
+      "description": "Tracks APY across 20+ DeFi protocols via DefiLlama. Daily digest of top yields for your assets. Alerts when a new pool exceeds your APY threshold.",
+      "long_description": "Yield Optimizer fetches live APY data from 20+ DeFi protocols via the free DefiLlama API — including Aave, Compound, Curve, Convex, Yearn, Lido, and more. Configure your target assets (USDC, ETH, stablecoins) and your minimum APY threshold. Every morning at 7 AM it sends a Telegram digest: the top 10 yield opportunities for your assets, sorted by APY with protocol risk ratings. If a new pool appears with APY above your threshold, it fires an immediate alert. Risk ratings factor in: protocol age, TVL, audit status, smart contract complexity. You still decide whether to move funds — this just ensures you never miss a better yield.",
+      "tags": [
+        "yield",
+        "defi",
+        "apy",
+        "defillama"
+      ],
+      "requirements": [
+        "Telegram Bot token",
+        "DefiLlama API (free, no key needed)"
+      ],
+      "version": "1.0.0",
+      "added": "2026-03-22",
+      "safety_notes": "Read-only yield data from DefiLlama public API. No wallet connectivity required. No transaction capability. Reviewed 2026-03-22."
     }
   ]
 }
