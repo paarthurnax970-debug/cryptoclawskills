@@ -3,568 +3,434 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CryptoClaw Skills Hub — Supercharge Your Crypto Agent</title>
+  <title>CryptoClaw Skills Hub — Safe Crypto Skills for OpenClaw</title>
+  <meta name="description" content="The safe crypto skills marketplace for OpenClaw users. Browse, buy, and install vetted AI trading skills. Sellers earn 90%.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <style>
-    /* ─── Reset & Base ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:      #0d1b2a;
-      --navy-mid:  #132338;
-      --navy-card: #1a2f45;
-      --teal:      #00c6b8;
-      --teal-dim:  #009e92;
-      --teal-glow: rgba(0,198,184,0.18);
-      --text:      #e2eaf3;
-      --text-dim:  #8ba5bf;
-      --border:    rgba(0,198,184,0.2);
-      --radius:    12px;
-      --shadow:    0 4px 32px rgba(0,0,0,0.4);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--navy);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.65;
-      min-height: 100vh;
-    }
-
-    /* ─── Typography ─── */
-    h1, h2, h3 { line-height: 1.25; font-weight: 700; }
-    h1 { font-size: clamp(1.75rem, 5vw, 3rem); }
-    h2 { font-size: clamp(1.4rem, 3.5vw, 2rem); }
-    h3 { font-size: 1.15rem; }
-    p  { color: var(--text-dim); }
-
-    a { color: var(--teal); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ─── Layout helpers ─── */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .section {
-      padding: 72px 0;
-    }
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--teal);
-      margin-bottom: 12px;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      background: rgba(13,27,42,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 16px 20px;
-    }
-    .nav-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .nav-logo {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .nav-logo span { color: var(--teal); }
-    .nav-cta {
-      background: var(--teal);
-      color: var(--navy) !important;
-      font-weight: 700;
-      font-size: 0.875rem;
-      padding: 10px 20px;
-      border-radius: 8px;
-      white-space: nowrap;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .nav-cta:hover {
-      background: var(--teal-dim);
-      text-decoration: none;
-      transform: translateY(-1px);
-    }
-
-    /* ─── HERO ─── */
+    /* ─── Homepage-specific styles ─── */
     .hero {
-      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, rgba(0,198,184,0.04) 100%);
-      padding: 96px 20px 80px;
+      padding: 96px 0 80px;
       text-align: center;
-      border-bottom: 1px solid var(--border);
       position: relative;
       overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute;
-      top: -120px; left: 50%;
+      top: -200px; left: 50%;
       transform: translateX(-50%);
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(ellipse, rgba(0,198,184,0.08) 0%, transparent 70%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,229,204,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
-    .hero-badge {
-      display: inline-block;
-      background: var(--teal-glow);
-      border: 1px solid var(--border);
-      color: var(--teal);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,229,204,0.08);
+      border: 1px solid rgba(0,229,204,0.25);
+      border-radius: 20px;
       padding: 6px 16px;
-      border-radius: 999px;
-      margin-bottom: 24px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
       text-transform: uppercase;
+      margin-bottom: 24px;
     }
-    .hero h1 {
-      max-width: 760px;
-      margin: 0 auto 20px;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--teal);
-    }
-    .hero-sub {
+    .hero h1 { max-width: 720px; margin: 0 auto 20px; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero .hero-sub {
       font-size: 1.15rem;
       color: var(--text-dim);
       max-width: 560px;
       margin: 0 auto 40px;
     }
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--teal);
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 1.05rem;
-      padding: 16px 36px;
-      border-radius: 10px;
-      box-shadow: 0 0 32px rgba(0,198,184,0.3);
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    }
-    .hero-cta:hover {
-      background: var(--teal-dim);
-      text-decoration: none;
-      transform: translateY(-2px);
-      box-shadow: 0 0 48px rgba(0,198,184,0.45);
-    }
-    .hero-cta svg { flex-shrink: 0; }
-    .hero-note {
-      margin-top: 16px;
-      font-size: 0.8rem;
-      color: var(--text-dim);
-    }
-
-    /* ─── WHAT IT IS ─── */
-    .what-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .what-card {
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .what-card:hover {
-      border-color: var(--teal);
-      transform: translateY(-3px);
-    }
-    .what-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-    .what-card h3 { margin-bottom: 8px; }
-    .what-card p { font-size: 0.92rem; }
-
-    /* ─── FEATURED SKILLS ─── */
-    .skills-section {
-      background: var(--navy-mid);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .skill-card {
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .skill-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--teal-dim));
-    }
-    .skill-card:hover {
-      border-color: var(--teal);
-      box-shadow: 0 8px 32px rgba(0,198,184,0.12);
-    }
-    .skill-badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 3px 10px;
-      border-radius: 999px;
-      margin-bottom: 16px;
-    }
-    .badge-seed {
-      background: rgba(0,198,184,0.15);
-      color: var(--teal);
-      border: 1px solid var(--border);
-    }
-    .badge-coming {
-      background: rgba(255,193,7,0.1);
-      color: #ffc107;
-      border: 1px solid rgba(255,193,7,0.2);
-    }
-    .skill-card h3 { margin-bottom: 10px; }
-    .skill-card p { font-size: 0.9rem; margin-bottom: 16px; }
-    .skill-features {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .skill-features li {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      padding: 4px 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-    .skill-features li::before {
-      content: '✓';
-      color: var(--teal);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    /* ─── WAITLIST ─── */
-    .waitlist-section {
-      text-align: center;
-    }
-    .waitlist-box {
-      max-width: 520px;
-      margin: 48px auto 0;
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 40px 36px;
-    }
-    .waitlist-box h3 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-    .waitlist-box > p {
-      font-size: 0.92rem;
-      margin-bottom: 28px;
-    }
-    .form-row {
+    .hero-ctas {
       display: flex;
       gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .trust-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .trust-item { display: flex; align-items: center; gap: 6px; }
+    .trust-item .check { color: #22c55e; }
+
+    /* ─── Feature band ─── */
+    .feature-band {
+      background: var(--card);
+      border-top: 1px solid var(--border-sub);
+      border-bottom: 1px solid var(--border-sub);
+      padding: 40px 0;
+    }
+    .feature-band-inner {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
     }
-    .form-row input[type="email"] {
-      flex: 1;
-      min-width: 0;
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-size: 0.95rem;
-      padding: 13px 16px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .form-row input[type="email"]::placeholder { color: var(--text-dim); }
-    .form-row input[type="email"]:focus { border-color: var(--teal); }
-    .form-submit {
-      background: var(--teal);
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 13px 24px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .form-submit:hover {
-      background: var(--teal-dim);
-      transform: translateY(-1px);
-    }
-    .waitlist-note {
-      margin-top: 16px;
-      font-size: 0.78rem;
-      color: var(--text-dim);
-    }
-    .early-access-btn {
-      display: inline-flex;
+    .feature-item {
+      display: flex;
       align-items: center;
-      gap: 10px;
-      background: transparent;
-      color: var(--teal);
-      border: 2px solid var(--teal);
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px 32px;
-      border-radius: 10px;
-      margin-top: 24px;
-      transition: background 0.2s, color 0.2s, transform 0.15s;
+      gap: 12px;
     }
-    .early-access-btn:hover {
-      background: var(--teal-glow);
-      text-decoration: none;
-      transform: translateY(-2px);
+    .feature-item-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--accent-glow);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .feature-item h4 { font-size: 0.9rem; color: var(--text); }
+    .feature-item p { font-size: 0.8rem; }
+
+    /* ─── How it works ─── */
+    .steps-connector {
+      display: none;
+    }
+    @media (min-width: 769px) {
+      .steps { position: relative; }
+      .steps::before {
+        content: '';
+        position: absolute;
+        top: 28px; left: calc(12.5% + 28px); right: calc(12.5% + 28px);
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+        opacity: 0.3;
+      }
     }
 
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--navy-mid);
-      border-top: 1px solid var(--border);
-      padding: 48px 20px;
+    /* ─── Seller CTA ─── */
+    .seller-cta {
+      background: linear-gradient(135deg, rgba(0,229,204,0.06) 0%, rgba(201,168,76,0.06) 100%);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-lg);
+      padding: 64px 40px;
       text-align: center;
     }
-    .footer-logo {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .footer-logo span { color: var(--teal); }
-    .footer-links {
+    .seller-cta h2 { margin-bottom: 16px; }
+    .seller-cta p { margin-bottom: 32px; font-size: 1.05rem; }
+    .seller-perks {
       display: flex;
-      justify-content: center;
       gap: 24px;
+      justify-content: center;
       flex-wrap: wrap;
-      margin: 20px 0;
+      margin-bottom: 40px;
     }
-    .footer-links a { font-size: 0.875rem; color: var(--text-dim); }
-    .footer-links a:hover { color: var(--teal); text-decoration: none; }
-    .disclaimer {
-      max-width: 720px;
-      margin: 24px auto 0;
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      line-height: 1.6;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
+    .perk {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      text-align: center;
+      min-width: 160px;
     }
-
-    /* ─── Responsive tweaks ─── */
-    @media (max-width: 600px) {
-      .form-row { flex-direction: column; }
-      .form-submit { width: 100%; }
-      .waitlist-box { padding: 28px 20px; }
-      .hero { padding: 72px 20px 64px; }
+    .perk-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
     }
+    .perk-label { font-size: 0.82rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
+<!-- ─── Navigation ─── -->
+<nav class="nav">
   <div class="nav-inner">
-    <div class="nav-logo">🐉 <span>CryptoClaw</span> Skills Hub</div>
-    <a class="nav-cta" href="https://dragonwhisper36.gumroad.com" target="_blank" rel="noopener">Get Early Access →</a>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🐲</span>
+      CryptoClaw <span>Skills</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="sell.html">Sell a Skill</a></li>
+      <li><a href="install-guide.html">Install Guide</a></li>
+      <li><a href="marketplace.html" class="nav-cta">Browse Skills</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">☰</button>
   </div>
 </nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="marketplace.html">Marketplace</a>
+  <a href="sell.html">Sell a Skill</a>
+  <a href="install-guide.html">Install Guide</a>
+  <a href="marketplace.html" class="nav-cta" style="margin-top:8px">Browse Skills →</a>
+</div>
 
-<!-- HERO -->
+<!-- ─── Hero ─── -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge">🛡️ Vetted · Safe · Plug & Play</div>
-    <h1>CryptoClaw Skills Hub —<br>The <em>Safe</em> Way to Supercharge<br>Your Crypto Agent</h1>
+    <div class="hero-label">🛡️ Every skill sandbox-reviewed before listing</div>
+    <h1>The <em>Safe</em> Crypto Skills Marketplace<br>for OpenClaw Users</h1>
     <p class="hero-sub">
-      Drop-in skill modules for your AI trading and portfolio agent.
-      Verified, sandboxed, and built for non-technical users who don't want to break things.
+      Browse vetted AI trading skills. Install in minutes. Paper trade safely.<br>
+      Sellers earn 90% of every sale.
     </p>
-    <a class="hero-cta" href="https://dragonwhisper36.gumroad.com" target="_blank" rel="noopener">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      Get Early Access
-    </a>
-    <p class="hero-note">No credit card required to join the waitlist · Launching Q2 2026</p>
+    <div class="hero-ctas">
+      <a href="marketplace.html" class="btn btn-primary btn-lg">🔍 Browse Skills</a>
+      <a href="sell.html" class="btn btn-outline btn-lg">💰 Become a Seller</a>
+    </div>
+    <div class="trust-row">
+      <span class="trust-item"><span class="check">✓</span> Sandbox-reviewed skills</span>
+      <span class="trust-item"><span class="check">✓</span> Paper trading only — no auto-execution</span>
+      <span class="trust-item"><span class="check">✓</span> Sellers earn 90%</span>
+      <span class="trust-item"><span class="check">✓</span> Free installs on OpenClaw</span>
+    </div>
   </div>
 </section>
 
-<!-- WHAT IT IS -->
+<!-- ─── Stats ─── -->
+<section class="section-sm">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-number" id="stat-skills">5</span>
+        <span class="stat-label">Skills Available</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="stat-installs">147</span>
+        <span class="stat-label">Total Installs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">90%</span>
+        <span class="stat-label">Seller Revenue Share</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Paper Trade Safe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Feature Band ─── -->
+<div class="feature-band">
+  <div class="container">
+    <div class="feature-band-inner">
+      <div class="feature-item">
+        <div class="feature-item-icon">🛡️</div>
+        <div>
+          <h4>Sandbox Reviewed</h4>
+          <p>Every skill tested before listing</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-item-icon">📄</div>
+        <div>
+          <h4>Paper Trading Only</h4>
+          <p>No real money, no auto-orders</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-item-icon">⚡</div>
+        <div>
+          <h4>Instant Install</h4>
+          <p>One folder drop, done</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-item-icon">💰</div>
+        <div>
+          <h4>Fair Revenue</h4>
+          <p>Sellers keep 90% of each sale</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Featured Skills ─── -->
 <section class="section">
   <div class="container">
-    <div class="section-label">What is CryptoClaw Skills Hub?</div>
-    <h2>Skills that plug into your agent.<br>No code. No risk.</h2>
-    <div class="what-grid">
-      <div class="what-card">
-        <span class="what-icon">🔌</span>
-        <h3>Plug-and-Play Modules</h3>
-        <p>Each skill is a self-contained module your AI agent can install in seconds. No Python knowledge required — just drop it in and go.</p>
+    <div class="section-header">
+      <span class="section-label">★ Featured Skills</span>
+      <h2>Start Trading Smarter Today</h2>
+      <p>Our most popular skills — all reviewed, all safe, all ready to install.</p>
+    </div>
+    <div class="grid skills-grid" id="featured-grid">
+      <div class="loading"><div class="spinner"></div>Loading…</div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="marketplace.html" class="btn btn-outline btn-lg">View All Skills →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── How it works ─── -->
+<section class="section" style="background:var(--bg-mid)">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2>From Browser to Better Trades in 4 Steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">🔍</div>
+        <h3>1. Browse</h3>
+        <p>Search and filter skills by category, price, and ratings. Read what each skill does before you buy.</p>
       </div>
-      <div class="what-card">
-        <span class="what-icon">🛡️</span>
-        <h3>Security Vetted</h3>
-        <p>Every skill goes through a strict security review before listing. No hidden API calls, no data exfiltration, no surprises. Read-only by default.</p>
+      <div class="step">
+        <div class="step-num">💳</div>
+        <h3>2. Buy</h3>
+        <p>Purchase securely via Gumroad. Get your download instantly. Every skill under $25.</p>
       </div>
-      <div class="what-card">
-        <span class="what-icon">🤖</span>
-        <h3>Built for AI Agents</h3>
-        <p>Designed specifically for OpenClaw, Claude Code, and compatible agent runtimes. Skills understand context, chain actions, and report clearly.</p>
+      <div class="step">
+        <div class="step-num">⚡</div>
+        <h3>3. Install</h3>
+        <p>Drop the folder into your OpenClaw skills directory. No code, no setup — just works.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">📈</div>
+        <h3>4. Trade Safer</h3>
+        <p>Your OpenClaw agent now has new powers. All paper trade — learn without risking real money.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED SKILLS -->
-<section class="section skills-section">
+<!-- ─── Seller CTA ─── -->
+<section class="section">
   <div class="container">
-    <div class="section-label">Featured Skills</div>
-    <h2>Start with these three.<br>More dropping weekly.</h2>
-    <div class="skills-grid">
-
-      <div class="skill-card">
-        <span class="skill-badge badge-seed">✦ Seed Skill</span>
-        <h3>📊 Portfolio Pulse</h3>
-        <p>Real-time portfolio snapshot across your wallets and exchanges. One command, complete picture.</p>
-        <ul class="skill-features">
-          <li>Aggregates CEX + wallet balances</li>
-          <li>24h PnL summary with emoji indicators</li>
-          <li>Sends daily digest to Telegram</li>
-          <li>Read-only API keys only — never trades</li>
-        </ul>
-      </div>
-
-      <div class="skill-card">
-        <span class="skill-badge badge-seed">✦ Seed Skill</span>
-        <h3>🔔 Whale Alert Listener</h3>
-        <p>Watches on-chain large movements and DeFi liquidity shifts. Alerts you before the crowd reacts.</p>
-        <ul class="skill-features">
-          <li>Monitors configurable wallet addresses</li>
-          <li>Threshold-based Telegram alerts</li>
-          <li>Links directly to Etherscan/BscScan</li>
-          <li>No private keys required</li>
-        </ul>
-      </div>
-
-      <div class="skill-card">
-        <span class="skill-badge badge-seed">✦ Seed Skill</span>
-        <h3>📰 Crypto Sentiment Scanner</h3>
-        <p>Aggregates Reddit, Twitter/X, and news sentiment for your watchlist tokens. Know the mood before the move.</p>
-        <ul class="skill-features">
-          <li>Configurable token watchlist</li>
-          <li>Bullish / Bearish / Neutral scoring</li>
-          <li>Daily digest or on-demand query</li>
-          <li>Flags coordinated pump language</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- WAITLIST / CTA -->
-<section class="section waitlist-section">
-  <div class="container">
-    <div class="section-label">Join the Waitlist</div>
-    <h2>Get early access before<br>public launch.</h2>
-    <div class="waitlist-box">
-      <h3>🐉 Reserve Your Spot</h3>
-      <p>Early access members get the first 3 skills free + 20% off all future releases. 247 people ahead of you.</p>
-
-      <!-- Form POSTs to Gumroad subscribe via redirect -->
-      <form action="https://dragonwhisper36.gumroad.com" method="get" target="_blank" onsubmit="handleWaitlist(event)">
-        <div class="form-row">
-          <input type="email" id="waitlist-email" name="email" placeholder="your@email.com" required>
-          <button type="submit" class="form-submit">Join Waitlist →</button>
+    <div class="seller-cta">
+      <span class="section-label">For Skill Creators</span>
+      <h2>Turn Your OpenClaw Skills into Passive Income</h2>
+      <p>Build once. Sell forever. We handle payments, hosting, and distribution — you keep 90%.</p>
+      <div class="seller-perks">
+        <div class="perk">
+          <span class="perk-num">90%</span>
+          <span class="perk-label">Revenue to you</span>
         </div>
-      </form>
-
-      <p class="waitlist-note">No spam. Unsubscribe any time. We hate it too.</p>
-
-      <a class="early-access-btn" href="https://dragonwhisper36.gumroad.com" target="_blank" rel="noopener">
-        🚀 Get Early Access on Gumroad
-      </a>
+        <div class="perk">
+          <span class="perk-num">Free</span>
+          <span class="perk-label">Listing cost</span>
+        </div>
+        <div class="perk">
+          <span class="perk-num">3-5</span>
+          <span class="perk-label">Day review time</span>
+        </div>
+        <div class="perk">
+          <span class="perk-num">∞</span>
+          <span class="perk-label">Earning potential</span>
+        </div>
+      </div>
+      <a href="sell.html" class="btn btn-gold btn-lg">Submit Your Skill →</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-logo">🐉 <span>CryptoClaw</span> Skills Hub</div>
-    <p style="font-size:0.875rem; color:var(--text-dim); margin-top:4px;">
-      Vetted AI skills for serious crypto traders.
-    </p>
-    <div class="footer-links">
-      <a href="https://dragonwhisper36.gumroad.com" target="_blank" rel="noopener">Gumroad Store</a>
-      <a href="#what-it-is" onclick="document.querySelector('.section').scrollIntoView({behavior:'smooth'}); return false;">What It Is</a>
-      <a href="#waitlist" onclick="document.querySelector('.waitlist-section').scrollIntoView({behavior:'smooth'}); return false;">Join Waitlist</a>
+<!-- ─── FAQ ─── -->
+<section class="section" style="background:var(--bg-mid)">
+  <div class="container" style="max-width:760px">
+    <div class="section-header">
+      <span class="section-label">FAQ</span>
+      <h2>Common Questions</h2>
     </div>
-    <div class="disclaimer">
-      <strong>⚠️ Disclaimer:</strong> CryptoClaw Skills Hub provides software tools for informational and automation purposes only.
-      Nothing on this site constitutes financial advice, investment advice, or a recommendation to buy or sell any cryptocurrency or digital asset.
-      Cryptocurrency markets are highly volatile. Past performance does not guarantee future results.
-      You are solely responsible for your own financial decisions. Always do your own research (DYOR).
-      Skills marked "read-only" do not and cannot execute trades on your behalf. Use at your own risk.
-      <br><br>
-      © 2026 CryptoClaw / Paarthurnax Systems. All rights reserved.
+    <div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          What is OpenClaw? <span class="accordion-icon">▾</span>
+        </button>
+        <div class="accordion-body">
+          OpenClaw is a personal AI agent platform. You run it on your computer and it acts as your AI assistant. Skills are extensions — they give your agent new abilities, like analyzing crypto markets or tracking your paper portfolio.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          Are these skills safe? Will they auto-trade with my real money? <span class="accordion-icon">▾</span>
+        </button>
+        <div class="accordion-body">
+          No. Every skill listed here is paper-trade only — they analyze markets and produce signals, but cannot place real orders. We sandbox-review every skill before listing it. Look for the green "Verified Safe" badge.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          How do I install a skill after buying? <span class="accordion-icon">▾</span>
+        </button>
+        <div class="accordion-body">
+          Download the ZIP from Gumroad, extract it, and drop the folder into <code style="background:rgba(0,229,204,0.1);padding:2px 6px;border-radius:4px">~/.openclaw/workspace/skills/</code>. Restart OpenClaw and ask your agent: "What skills do you have?" See our <a href="install-guide.html">full install guide</a>.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          How do I sell my skill here? <span class="accordion-icon">▾</span>
+        </button>
+        <div class="accordion-body">
+          Fill out the submission form on the <a href="sell.html">Become a Seller</a> page. We review your skill within 3–5 business days. You'll need a Gumroad account to receive payments — we use Gumroad's revenue split feature so you automatically receive 90% of every sale.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">
+          What's the 10% platform fee for? <span class="accordion-icon">▾</span>
+        </button>
+        <div class="accordion-body">
+          The 10% covers the cost of running the marketplace (hosting, review process, marketing), and keeps the listing free for sellers. You set the price, we take 10%, you keep 90%.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.05rem">
+          <span class="logo-icon">🐲</span>
+          CryptoClaw <span>Skills</span> Hub
+        </a>
+        <p>The safe crypto skills marketplace for OpenClaw users. Every skill sandbox-reviewed before listing.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Marketplace</h4>
+        <ul class="footer-links">
+          <li><a href="marketplace.html">Browse Skills</a></li>
+          <li><a href="marketplace.html?cat=Scanner">Scanners</a></li>
+          <li><a href="marketplace.html?cat=Analyzer">Analyzers</a></li>
+          <li><a href="marketplace.html?cat=Risk%20Manager">Risk Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Creators</h4>
+        <ul class="footer-links">
+          <li><a href="sell.html">Become a Seller</a></li>
+          <li><a href="sell.html#requirements">Requirements</a></li>
+          <li><a href="sell.html#revenue">Revenue Split</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="install-guide.html">Install Guide</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="mailto:paarthurnax970@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CryptoClaw Skills Hub. Built for OpenClaw users.</span>
+      <span>All skills are paper-trade safe. Not financial advice.</span>
     </div>
   </div>
 </footer>
 
-<script>
-  function handleWaitlist(e) {
-    // Store email locally and redirect to Gumroad
-    const email = document.getElementById('waitlist-email').value;
-    if (email) {
-      // Could POST to a backend; for now just redirect
-      console.log('Waitlist signup:', email);
-    }
-    // Let the form submit to Gumroad
-    return true;
-  }
-
-  // Smooth scroll for nav CTA
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-</script>
+<script src="js/app.js"></script>
 </body>
 </html>
